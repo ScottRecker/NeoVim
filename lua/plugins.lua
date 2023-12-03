@@ -34,6 +34,7 @@ return {
 
     { "nvim-treesitter/nvim-treesitter", },
     { 'theprimeagen/harpoon' },
+    { 'theprimeagen/git-worktree.nvim' },
     { 'hoob3rt/lualine.nvim' },
     { 'mbbill/undotree' },
     { 'tpope/vim-fugitive' },
