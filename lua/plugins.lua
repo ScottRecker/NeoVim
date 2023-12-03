@@ -34,6 +34,7 @@ return {
 
     { "nvim-treesitter/nvim-treesitter", },
     { 'theprimeagen/harpoon' },
+    { 'hoob3rt/lualine.nvim' },
     { 'mbbill/undotree' },
     { 'tpope/vim-fugitive' },
     { 'folke/which-key.nvim' },
