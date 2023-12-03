@@ -7,6 +7,11 @@ return {
         name = 'rose-pine'
     },
 
+    { "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000
+    },
+
     -- Telescope (Fuzzy Finder)
     {
         'nvim-telescope/telescope.nvim',
