@@ -19,12 +19,9 @@ vim.g.mapleader = " "
 require("lazy").setup("plugins", {
   change_detection = {
     enabled = true, -- automatically chec for config file changes and reload the ui
-    notify = false, -- turn off notifications whenever plugin changes are made
+    notify = true, -- turn off notifications whenever plugin changes are made
   },
 })
-
--- vim.g.python3_host_prog = os.getenv("HOME") .. "/.venvs/neovim/bin/python"
-vim.g.python3_host_prog = "python"
 
 -- These modules are not loaded by lazy
 require("core.options")
