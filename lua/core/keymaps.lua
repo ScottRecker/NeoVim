@@ -47,8 +47,7 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle maximize tab
 
 -- Nvim-tree
 keymap.set("n", "<leader>ee", ":NvimTreeToggle<CR>") -- toggle file explorer
-keymap.set("n", "<leader>eo", ":NvimTreeFocus<CR>") -- toggle file explorer
-keymap.set("n", "<leader>er", ":NvimTreeFocus<CR>") -- toggle focus to file explorer
+keymap.set("n", "<leader>eo", ":NvimTreeFocus<CR>") -- toggle focus to file explorer
 keymap.set("n", "<leader>ef", ":NvimTreeFindFile<CR>") -- find file in file explorer
 
 -- Telescope
@@ -76,9 +75,6 @@ keymap.set("n", "<leader>h6", function() require("harpoon.ui").nav_file(6) end)
 keymap.set("n", "<leader>h7", function() require("harpoon.ui").nav_file(7) end)
 keymap.set("n", "<leader>h8", function() require("harpoon.ui").nav_file(8) end)
 keymap.set("n", "<leader>h9", function() require("harpoon.ui").nav_file(9) end)
-
--- Vim REST Console
-keymap.set("n", "<leader>xr", ":call VrcQuery()<CR>") -- Run REST query
 
 -- LSP
 keymap.set('n', '<leader>gg', '<cmd>lua vim.lsp.buf.hover()<CR>')
