@@ -85,6 +85,19 @@ return {
       },
     }
 
+    -- Python LSP settings
+    lspconfig.pyright.setup({
+      on_attach = lsp_attach,
+      capabilities = lsp_capabilities,
+      filetypes = {"python"},
+      settings = {
+        python = {
+          -- pythonPath = vim.fn.exepath("python3")
+          pythonPath = "./venv/bin/python"
+        }
+      }
+    })
+
     -- Globally configure all LSP floating preview popups (like hover, signature help, etc)
     local open_floating_preview = vim.lsp.util.open_floating_preview
     function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
