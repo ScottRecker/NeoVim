@@ -35,8 +35,8 @@ vim.diagnostic.config {
 -- Backspace
 opt.backspace = "indent,eol,start"
 
--- Clipboard
-opt.clipboard:append("unnamedplus")
+-- Clipboard, uses system clipboard as default register
+-- opt.clipboard:append("unnamedplus")
 
 -- Split Windows
 opt.splitright = true
