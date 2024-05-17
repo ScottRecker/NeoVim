@@ -60,21 +60,29 @@ keymap.set('n', '<leader>fo', require('telescope.builtin').lsp_document_symbols,
 keymap.set('n', '<leader>fi', require('telescope.builtin').lsp_incoming_calls, {})
 keymap.set('n', '<leader>fm', function() require('telescope.builtin').treesitter({default_text=":method:"}) end)
 
+-- Trouble
+vim.keymap.set("n", "<leader>xx", function() require("trouble").toggle() end)
+vim.keymap.set("n", "<leader>xw", function() require("trouble").toggle("workspace_diagnostics") end)
+vim.keymap.set("n", "<leader>xd", function() require("trouble").toggle("document_diagnostics") end)
+vim.keymap.set("n", "<leader>xq", function() require("trouble").toggle("quickfix") end)
+vim.keymap.set("n", "<leader>xl", function() require("trouble").toggle("loclist") end)
+vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end)
+
 -- Git-blame
 keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>") -- toggle git blame
 
 -- Harpoon
-keymap.set("n", "<leader>ha", function() harpoon:list():add() end)
-keymap.set("n", "<leader>hh", require("harpoon.ui").toggle_quick_menu)
-keymap.set("n", "<leader>h1", function() require("harpoon.ui").nav_file(1) end)
-keymap.set("n", "<leader>h2", function() require("harpoon.ui").nav_file(2) end)
-keymap.set("n", "<leader>h3", function() require("harpoon.ui").nav_file(3) end)
-keymap.set("n", "<leader>h4", function() require("harpoon.ui").nav_file(4) end)
-keymap.set("n", "<leader>h5", function() require("harpoon.ui").nav_file(5) end)
-keymap.set("n", "<leader>h6", function() require("harpoon.ui").nav_file(6) end)
-keymap.set("n", "<leader>h7", function() require("harpoon.ui").nav_file(7) end)
-keymap.set("n", "<leader>h8", function() require("harpoon.ui").nav_file(8) end)
-keymap.set("n", "<leader>h9", function() require("harpoon.ui").nav_file(9) end)
+-- keymap.set("n", "<leader>ha", function() harpoon:list():add() end)
+-- keymap.set("n", "<leader>hh", require("harpoon.ui").toggle_quick_menu)
+-- keymap.set("n", "<leader>h1", function() require("harpoon.ui").nav_file(1) end)
+-- keymap.set("n", "<leader>h2", function() require("harpoon.ui").nav_file(2) end)
+-- keymap.set("n", "<leader>h3", function() require("harpoon.ui").nav_file(3) end)
+-- keymap.set("n", "<leader>h4", function() require("harpoon.ui").nav_file(4) end)
+-- keymap.set("n", "<leader>h5", function() require("harpoon.ui").nav_file(5) end)
+-- keymap.set("n", "<leader>h6", function() require("harpoon.ui").nav_file(6) end)
+-- keymap.set("n", "<leader>h7", function() require("harpoon.ui").nav_file(7) end)
+-- keymap.set("n", "<leader>h8", function() require("harpoon.ui").nav_file(8) end)
+-- keymap.set("n", "<leader>h9", function() require("harpoon.ui").nav_file(9) end)
 
 -- LSP
 keymap.set('n', '<leader>gg', '<cmd>lua vim.lsp.buf.hover()<CR>')
