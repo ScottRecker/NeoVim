@@ -52,6 +52,7 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle maximize tab
 keymap.set("n", "<leader>ee", ":NvimTreeToggle<CR>") -- toggle file explorer
 keymap.set("n", "<leader>eo", ":NvimTreeFocus<CR>") -- toggle focus to file explorer
 keymap.set("n", "<leader>ef", ":NvimTreeFindFile<CR>") -- find file in file explorer
+keymap.set("n", "<leader>ec", ":NvimTreeCollapse<CR>") -- collapse all open folders
 keymap.set("n", "<leader>er", ":NvimTreeRefresh<CR>") -- refresh the file explorer
 
 -- Telescope
