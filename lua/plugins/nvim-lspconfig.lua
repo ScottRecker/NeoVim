@@ -50,6 +50,7 @@ return {
 				"isort",
 				"mypy",
 				"pylint",
+				"eslint_d",
 			},
 		})
 
