@@ -19,7 +19,7 @@ vim.g.mapleader = " "
 require("lazy").setup("plugins", {
 	change_detection = {
 		enabled = true, -- automatically chec for config file changes and reload the ui
-		notify = true, -- turn off notifications whenever plugin changes are made
+		notify = false, -- turn off notifications whenever plugin changes are made
 	},
 })
 
