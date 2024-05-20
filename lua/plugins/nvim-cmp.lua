@@ -23,10 +23,14 @@ return {
 		"hrsh7th/cmp-path",
 		-- https://github.com/hrsh7th/cmp-cmdline
 		"hrsh7th/cmp-cmdline",
+
+		"onsails/lspkind.nvim", -- vs-code like pictograms
 	},
 	config = function()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
+		local lspkind = require("lspkind")
+
 		require("luasnip.loaders.from_vscode").lazy_load()
 		luasnip.config.setup({})
 
@@ -78,6 +82,14 @@ return {
 				{ name = "buffer" }, -- text within current buffer
 				{ name = "path" }, -- file system paths
 			}),
+			-- configure lspkind for vs-code like pictograms in completion menu
+			formatting = {
+				format = lspkind.cmp_format({
+					maxwidth = 50,
+					ellipsis_char = "...",
+				}),
+			},
+
 			window = {
 				-- Add borders to completions popups
 				completion = cmp.config.window.bordered(),
