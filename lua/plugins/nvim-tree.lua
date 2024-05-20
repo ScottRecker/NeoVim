@@ -7,6 +7,23 @@ return {
 		"nvim-tree/nvim-web-devicons", -- Fancy icon support
 	},
 	opts = {
+		view = {
+			width = 35,
+			relativenumber = true,
+		},
+		renderer = {
+			indent_markers = {
+				enable = true,
+			},
+			icons = {
+				glyphs = {
+					folder = {
+						arrow_closed = "", -- arrow when folder is closed
+						arrow_open = "", -- arrow when folder is open
+					},
+				},
+			},
+		},
 		filters = {
 			dotfiles = true,
 		},
