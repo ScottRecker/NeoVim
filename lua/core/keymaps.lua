@@ -63,6 +63,7 @@ keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags, {})
 keymap.set("n", "<leader>fs", require("telescope.builtin").current_buffer_fuzzy_find, {})
 keymap.set("n", "<leader>fo", require("telescope.builtin").lsp_document_symbols, {})
 keymap.set("n", "<leader>fi", require("telescope.builtin").lsp_incoming_calls, {})
+keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 keymap.set("n", "<leader>fm", function()
 	require("telescope.builtin").treesitter({ default_text = ":method:" })
 end)
@@ -86,6 +87,7 @@ end)
 vim.keymap.set("n", "gR", function()
 	require("trouble").toggle("lsp_references")
 end)
+keymap.set("n", "<leader>xt", "<cmd>TodoTrouble<cr>", { desc = "Open todos in Trouble" })
 
 -- Git-blame
 keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>") -- toggle git blame

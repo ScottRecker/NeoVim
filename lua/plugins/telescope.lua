@@ -6,7 +6,7 @@ return {
 	branch = "0.1.x",
 	dependencies = {
 		-- https://github.com/nvim-lua/plenary.nvim
-		{ "nvim-lua/plenary.nvim" },
+		{ "nvim-lua/plenary.nvim", "folke/todo-comments.nvim" },
 		{
 			-- https://github.com/nvim-telescope/telescope-fzf-native.nvim
 			"nvim-telescope/telescope-fzf-native.nvim",
