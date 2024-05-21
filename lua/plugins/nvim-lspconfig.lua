@@ -86,6 +86,11 @@ return {
 			},
 		})
 
+		lspconfig.sourcekit.setup({
+			capabilities = lsp_capabilities,
+			on_attach = lsp_attach,
+		})
+
 		-- Python LSP settings
 		lspconfig.pyright.setup({
 			on_attach = lsp_attach,
