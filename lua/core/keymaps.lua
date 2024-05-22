@@ -65,27 +65,27 @@ keymap.set("n", "<leader>fo", require("telescope.builtin").lsp_document_symbols,
 keymap.set("n", "<leader>fi", require("telescope.builtin").lsp_incoming_calls, {})
 keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 keymap.set("n", "<leader>fm", function()
-	require("telescope.builtin").treesitter({ default_text = ":method:" })
+  require("telescope.builtin").treesitter({ default_text = ":method:" })
 end)
 
 -- Trouble
 vim.keymap.set("n", "<leader>xx", function()
-	require("trouble").toggle()
+  require("trouble").toggle()
 end)
 vim.keymap.set("n", "<leader>xw", function()
-	require("trouble").toggle("workspace_diagnostics")
+  require("trouble").toggle("workspace_diagnostics")
 end)
 vim.keymap.set("n", "<leader>xd", function()
-	require("trouble").toggle("document_diagnostics")
+  require("trouble").toggle("document_diagnostics")
 end)
 vim.keymap.set("n", "<leader>xq", function()
-	require("trouble").toggle("quickfix")
+  require("trouble").toggle("quickfix")
 end)
 vim.keymap.set("n", "<leader>xl", function()
-	require("trouble").toggle("loclist")
+  require("trouble").toggle("loclist")
 end)
 vim.keymap.set("n", "gR", function()
-	require("trouble").toggle("lsp_references")
+  require("trouble").toggle("lsp_references")
 end)
 keymap.set("n", "<leader>xt", "<cmd>TodoTrouble<cr>", { desc = "Open todos in Trouble" })
 
@@ -125,22 +125,22 @@ keymap.set("i", "<C-Space>", "<cmd>lua vim.lsp.buf.completion()<CR>")
 
 -- Filetype-specific keymaps (these can be done in the ftplugin directory instead if you prefer)
 keymap.set("n", "<leader>go", function()
-	if vim.bo.filetype == "python" then
-		vim.api.nvim_command("PyrightOrganizeImports")
-	end
-end)
+  if vim.bo.filetype == "python" then
+    vim.api.nvim_command("PyrightOrganizeImports")
+  end
+end, { desc = "Organize imports" })
 
 keymap.set("n", "<leader>tc", function()
-	if vim.bo.filetype == "python" then
-		require("dap-python").test_class()
-	end
-end)
+  if vim.bo.filetype == "python" then
+    require("dap-python").test_class()
+  end
+end, { desc = "Test class" })
 
 keymap.set("n", "<leader>tm", function()
-	if vim.bo.filetype == "python" then
-		require("dap-python").test_method()
-	end
-end)
+  if vim.bo.filetype == "python" then
+    require("dap-python").test_method()
+  end
+end, { desc = "Test method" })
 
 -- Debugging
 keymap.set("n", "<leader>bb", "<cmd>lua require'dap'.toggle_breakpoint()<cr>")
@@ -153,24 +153,24 @@ keymap.set("n", "<leader>dj", "<cmd>lua require'dap'.step_over()<cr>")
 keymap.set("n", "<leader>dk", "<cmd>lua require'dap'.step_into()<cr>")
 keymap.set("n", "<leader>do", "<cmd>lua require'dap'.step_out()<cr>")
 keymap.set("n", "<leader>dd", function()
-	require("dap").disconnect()
-	require("dapui").close()
+  require("dap").disconnect()
+  require("dapui").close()
 end)
 keymap.set("n", "<leader>dt", function()
-	require("dap").terminate()
-	require("dapui").close()
+  require("dap").terminate()
+  require("dapui").close()
 end)
 keymap.set("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>")
 keymap.set("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>")
 keymap.set("n", "<leader>di", function()
-	require("dap.ui.widgets").hover()
+  require("dap.ui.widgets").hover()
 end)
 keymap.set("n", "<leader>d?", function()
-	local widgets = require("dap.ui.widgets")
-	widgets.centered_float(widgets.scopes)
+  local widgets = require("dap.ui.widgets")
+  widgets.centered_float(widgets.scopes)
 end)
 keymap.set("n", "<leader>df", "<cmd>Telescope dap frames<cr>")
 keymap.set("n", "<leader>dh", "<cmd>Telescope dap commands<cr>")
 keymap.set("n", "<leader>de", function()
-	require("telescope.builtin").diagnostics({ default_text = ":E:" })
+  require("telescope.builtin").diagnostics({ default_text = ":E:" })
 end)
