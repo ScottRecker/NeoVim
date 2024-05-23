@@ -6,6 +6,9 @@ local keymap = vim.keymap
 -- clear search highlights
 keymap.set("n", "<leader>,", ":nohl<CR>", { desc = "Clear search highlights" })
 
+-- Yank to clipboard
+keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+
 -- General keymaps
 keymap.set("i", "jk", "<ESC>", { desc = "exit insert mode with jk" })
 keymap.set("i", "jj", "<ESC>", { desc = "exit insert mode with jj" })
@@ -113,7 +116,7 @@ keymap.set("n", "<leader>gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { des
 keymap.set("n", "<leader>gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { desc = "LSP type definition" })
 keymap.set("n", "<leader>gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "LSP references" })
 keymap.set("n", "<leader>gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { desc = "LSP signature help" })
-keymap.set("n", "<leader>rr", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "LSP rename" })
+keymap.set("n", "<leader>gr", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "LSP rename" })
 keymap.set("v", "<leader>gf", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", { desc = "LSP format" })
 keymap.set("n", "<leader>ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "LSP code action" })
 keymap.set("n", "<leader>gl", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "LSP open float" })
