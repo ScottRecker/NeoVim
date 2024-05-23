@@ -89,20 +89,26 @@ return {
       },
     })
 
-		})
+    -- Python virtual env detection
+    -- local util = require("lspconfig/util")
+    -- local path = util.path
 
-		-- Python LSP settings
-		lspconfig.pyright.setup({
-			on_attach = lsp_attach,
-			capabilities = lsp_capabilities,
-			filetypes = { "python" },
-			settings = {
-				python = {
-					-- pythonPath = vim.fn.exepath("python3")
-					pythonPath = "./venv/bin/python",
-				},
-			},
-		})
+    -- Python LSP settings
+    lspconfig.pyright.setup({
+      on_attach = lsp_attach,
+      capabilities = lsp_capabilities,
+      filetypes = { "python" },
+      -- before_init = function(_, config)
+      --   local default_venv_path = path.join(vim.env.HOME, ".venv", "neovim", "bin", "python")
+      --   config.settings.python.pythonPath = default_venv_path
+      -- end,
+      settings = {
+        python = {
+          -- pythonPath = vim.fn.exepath("python3")
+          pythonPath = "./venv/bin/python",
+        },
+      },
+    })
 
     -- Globally configure all LSP floating preview popups (like hover, signature help, etc)
     local open_floating_preview = vim.lsp.util.open_floating_preview
