@@ -183,3 +183,7 @@ end, { desc = "Dap widgets" })
 keymap.set("n", "<leader>de", function()
   require("telescope.builtin").diagnostics({ default_text = ":E:" })
 end, { desc = "Telescope diagnostics" })
+
+-- Markdown
+keymap.set("n", "<leader>md", "<cmd>MarkdownPreview<cr>", { desc = "Markdown preview" })
+keymap.set("n", "<leader>mt", "<cmd>MarkdownToggle<cr>", { desc = "Markdown toggle" })
