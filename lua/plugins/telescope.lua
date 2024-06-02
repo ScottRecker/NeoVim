@@ -27,7 +27,6 @@ return {
   },
 
   config = function()
-    print("Loading noice extenion")
     require("telescope").load_extension("noice")
   end,
 }
