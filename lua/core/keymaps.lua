@@ -179,3 +179,6 @@ end, { desc = "Telescope diagnostics" })
 -- Markdown
 keymap.set("n", "<leader>md", "<cmd>MarkdownPreview<cr>", { desc = "Markdown preview" })
 keymap.set("n", "<leader>mt", "<cmd>MarkdownToggle<cr>", { desc = "Markdown toggle" })
+
+-- Dismiss Noice message
+keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<cr>", { desc = "Dismiss Noice Message" })
