@@ -17,6 +17,10 @@ keymap.set("n", "<leader>qq", ":q!<CR>", { desc = "quit without saving" })
 keymap.set("n", "<leader>ww", ":w<CR>", { desc = "save" })
 keymap.set("n", "gx", ":!open <c-r><c-a><CR>", { desc = "open URL under cursor" })
 
+-- Move lines
+keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "move line down" })
+keymap.set("v", "K", ":m '>-2<CR>gv=gv", { desc = "move line up" })
+
 -- Split window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "split window vertically" })
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "split window horizontally" })
