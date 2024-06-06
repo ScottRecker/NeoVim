@@ -72,80 +72,71 @@ keymap.set("n", "<leader>fo", require("telescope.builtin").lsp_document_symbols,
 keymap.set("n", "<leader>fi", require("telescope.builtin").lsp_incoming_calls, {})
 keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 keymap.set("n", "<leader>fm", function()
-  require("telescope.builtin").treesitter({ default_text = ":method:" })
+	require("telescope.builtin").treesitter({ default_text = ":method:" })
 end)
 
 -- Trouble
 vim.keymap.set("n", "<leader>xx", function()
-  require("trouble").toggle()
+	require("trouble").toggle()
 end, { desc = "Trouble toggle" })
 
 vim.keymap.set("n", "<leader>xw", function()
-  require("trouble").toggle("workspace_diagnostics")
+	require("trouble").toggle("workspace_diagnostics")
 end, { desc = "Trouble workspace diagnostics" })
 
 vim.keymap.set("n", "<leader>xd", function()
-  require("trouble").toggle("document_diagnostics")
+	require("trouble").toggle("document_diagnostics")
 end, { desc = "Trouble document diagnostics" })
 
 vim.keymap.set("n", "<leader>xq", function()
-  require("trouble").toggle("quickfix")
+	require("trouble").toggle("quickfix")
 end, { desc = "Trouble quickfix" })
 
 vim.keymap.set("n", "<leader>xl", function()
-  require("trouble").toggle("loclist")
+	require("trouble").toggle("loclist")
 end, { desc = "Trouble loclist" })
 
 vim.keymap.set("n", "gR", function()
-  require("trouble").toggle("lsp_references")
+	require("trouble").toggle("lsp_references")
 end, { desc = "Trouble lsp references" })
 keymap.set("n", "<leader>xt", "<cmd>TodoTrouble<cr>", { desc = "Open todos in Trouble" })
 
 -- Git-blame
 keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", { desc = "toggle git blame" })
 
--- LSP
-keymap.set("n", "<leader>gg", "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = "LSP hover" })
-keymap.set("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "LSP definition" })
-keymap.set("n", "<leader>gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "LSP declaration" })
-keymap.set("n", "<leader>gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { desc = "LSP implementation" })
-keymap.set("n", "<leader>gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { desc = "LSP type definition" })
-keymap.set("n", "<leader>gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "LSP references" })
-keymap.set("n", "<leader>gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { desc = "LSP signature help" })
-keymap.set("n", "<leader>gr", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "LSP rename" })
-keymap.set("v", "<leader>gf", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", { desc = "LSP format" })
-keymap.set("n", "<leader>ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "LSP code action" })
-keymap.set("n", "<leader>gl", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "LSP open float" })
-keymap.set("n", "<leader>gp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { desc = "LSP goto prev" })
-keymap.set("n", "<leader>gn", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "LSP goto next" })
-keymap.set("n", "<leader>tr", "<cmd>lua vim.lsp.buf.document_symbol()<CR>", { desc = "LSP document symbol" })
-keymap.set("i", "<C-Space>", "<cmd>lua vim.lsp.buf.completion()<CR>", { desc = "LSP completion" })
-
 -- Filetype-specific keymaps (these can be done in the ftplugin directory instead if you prefer)
 keymap.set("n", "<leader>go", function()
-  if vim.bo.filetype == "python" then
-    vim.api.nvim_command("PyrightOrganizeImports")
-  end
+	if vim.bo.filetype == "python" then
+		vim.api.nvim_command("PyrightOrganizeImports")
+	end
 end, { desc = "Organize imports" })
 
 keymap.set("n", "<leader>tc", function()
-  if vim.bo.filetype == "python" then
-    require("dap-python").test_class()
-  end
+	if vim.bo.filetype == "python" then
+		require("dap-python").test_class()
+	end
 end, { desc = "Test class" })
 
 keymap.set("n", "<leader>tm", function()
-  if vim.bo.filetype == "python" then
-    require("dap-python").test_method()
-  end
+	if vim.bo.filetype == "python" then
+		require("dap-python").test_method()
+	end
 end, { desc = "Test method" })
 
 -- Debugging
 keymap.set("n", "<leader>bb", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", { desc = "Dap toggle breakpoint" })
-keymap.set("n", "<leader>bc", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>",
-  { desc = "Dap breakpoint condition" })
-keymap.set("n", "<leader>bl", "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>",
-  { desc = "Dap breakpoint message" })
+keymap.set(
+	"n",
+	"<leader>bc",
+	"<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>",
+	{ desc = "Dap breakpoint condition" }
+)
+keymap.set(
+	"n",
+	"<leader>bl",
+	"<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>",
+	{ desc = "Dap breakpoint message" }
+)
 keymap.set("n", "<leader>br", "<cmd>lua require'dap'.clear_breakpoints()<cr>", { desc = "Dap clear breakpoints" })
 keymap.set("n", "<leader>ba", "<cmd>Telescope dap list_breakpoints<cr>", { desc = "Dap list breakpoints" })
 keymap.set("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", { desc = "Dap continue" })
@@ -158,26 +149,26 @@ keymap.set("n", "<leader>df", "<cmd>Telescope dap frames<cr>", { desc = "Telesco
 keymap.set("n", "<leader>dh", "<cmd>Telescope dap commands<cr>", { desc = "Telescope dap commands" })
 
 keymap.set("n", "<leader>dd", function()
-  require("dap").disconnect()
-  require("dapui").close()
+	require("dap").disconnect()
+	require("dapui").close()
 end, { desc = "Dap disconnect" })
 
 keymap.set("n", "<leader>dt", function()
-  require("dap").terminate()
-  require("dapui").close()
+	require("dap").terminate()
+	require("dapui").close()
 end, { desc = "Dap terminate and close" })
 
 keymap.set("n", "<leader>di", function()
-  require("dap.ui.widgets").hover()
+	require("dap.ui.widgets").hover()
 end, { desc = "Dap hover" })
 
 keymap.set("n", "<leader>d?", function()
-  local widgets = require("dap.ui.widgets")
-  widgets.centered_float(widgets.scopes)
+	local widgets = require("dap.ui.widgets")
+	widgets.centered_float(widgets.scopes)
 end, { desc = "Dap widgets" })
 
 keymap.set("n", "<leader>de", function()
-  require("telescope.builtin").diagnostics({ default_text = ":E:" })
+	require("telescope.builtin").diagnostics({ default_text = ":E:" })
 end, { desc = "Telescope diagnostics" })
 
 -- Markdown
