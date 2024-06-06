@@ -41,6 +41,7 @@ return {
         "quick_lint_js",
         "yamlls",
         "pyright",
+        "rust_analyzer",
       },
     })
 
@@ -84,6 +85,28 @@ return {
           diagnostics = {
             -- Get the language server to recognize the `vim` global
             globals = { "vim" },
+          },
+        },
+      },
+    })
+
+    lspconfig.rust_analyzer.setup({
+      capabilities = lsp_capabilities,
+      cmd = {
+        "rustup",
+        "run",
+        "stable",
+        "rust-analyzer",
+      },
+      settings = {
+        ["rust_analyzer"] = {
+          cargo = {
+            buildScripts = {
+              enable = true,
+            },
+          },
+          procMacro = {
+            enable = true
           },
         },
       },
