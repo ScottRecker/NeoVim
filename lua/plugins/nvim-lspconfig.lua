@@ -51,8 +51,7 @@ return {
 				"black",
 				"debugpy",
 				"flake8",
-				"isort",
-				"mypy",
+				"ruff",
 				"pylint",
 				"eslint_d",
 			},
@@ -125,12 +124,27 @@ return {
 				local default_venv_path = path.join(vim.env.HOME, ".venv", "bin", "python")
 				config.settings.python.pythonPath = default_venv_path
 			end,
-			-- settings = {
-			--   python = {
-			--     -- pythonPath = vim.fn.exepath("python3")
-			--     pythonPath = "./venv/bin/python",
-			--   },
-			-- },
+			settings = {
+				pyright = {
+					disableOrganizeImports = true, -- Using Ruff
+				},
+				python = {
+					analysis = {
+						ignore = { "*" }, -- Using Ruff
+					},
+				},
+			},
+		})
+
+		local on_attach = function(client, _)
+			if client.name == "ruff" then
+				-- Disable hover in favor of pyright
+				client.server_capabilities.hoverProvider = false
+			end
+		end
+
+		require("lspconfig").ruff.setup({
+			on_attach = on_attach,
 		})
 
 		-- Globally configure all LSP floating preview popups (like hover, signature help, etc)

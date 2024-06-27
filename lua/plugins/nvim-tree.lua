@@ -7,6 +7,11 @@ return {
 		"nvim-tree/nvim-web-devicons", -- Fancy icon support
 	},
 	opts = {
+		git = {
+			enable = true,
+			ignore = false,
+			timeout = 500,
+		},
 		view = {
 			width = 35,
 			relativenumber = true,
