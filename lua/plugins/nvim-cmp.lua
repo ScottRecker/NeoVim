@@ -34,6 +34,13 @@ return {
 		require("luasnip.loaders.from_vscode").lazy_load()
 		luasnip.config.setup({})
 
+		cmp.setup.filetype({ "sql" }, {
+			sources = {
+				{ name = "vim-dadbod-completion" },
+				{ name = "buffer" },
+			},
+		})
+
 		cmp.setup({
 			snippet = {
 				expand = function(args)
