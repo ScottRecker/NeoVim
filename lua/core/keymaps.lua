@@ -23,7 +23,7 @@ keymap.set("v", "K", ":m '>-2<CR>gv=gv", { desc = "move line up" })
 
 -- Split window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "split window vertically" })
-keymap.set("n", "<leader>sh", "<C-w>s", { desc = "split window horizontally" })
+keymap.set("n", "<leader>sz", "<C-w>s", { desc = "split window horizontally" })
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "make split windows equal width" })
 keymap.set("n", "<leader>sx", ":close<CR>", { desc = "close split window" })
 keymap.set("n", "<leader>sj", "<C-w>-", { desc = "make split window height shorter" })
