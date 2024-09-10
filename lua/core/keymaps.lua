@@ -16,6 +16,7 @@ keymap.set("n", "<leader>wq", ":wq<CR>", { desc = "save and quit" })
 keymap.set("n", "<leader>qq", ":q!<CR>", { desc = "quit without saving" })
 keymap.set("n", "<leader>ww", ":w<CR>", { desc = "save" })
 keymap.set("n", "gx", ":!open <c-r><c-a><CR>", { desc = "open URL under cursor" })
+keymap.set("t", "<Esc>", "<c-\\><c-n>", { desc = "Exit insert mode in terminal" })
 
 -- Move lines
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "move line down" })
