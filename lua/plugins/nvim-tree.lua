@@ -7,6 +7,11 @@ return {
 		"nvim-tree/nvim-web-devicons", -- Fancy icon support
 	},
 	opts = {
+		auto_open = true,
+		update_focused_file = {
+			enable = true,
+			update_cwd = true,
+		},
 		git = {
 			enable = true,
 			ignore = false,
