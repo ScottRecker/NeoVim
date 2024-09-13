@@ -38,7 +38,6 @@ return {
 				"jsonls",
 				"lemminx",
 				"marksman",
-				"quick_lint_js",
 				"yamlls",
 				"pyright",
 				"rust_analyzer",
@@ -134,6 +133,15 @@ return {
 					},
 				},
 			},
+		})
+
+		lspconfig.tsserver.setup({
+			filetypes = { "typescript", "typescriptreat", "typescript.tsx" },
+			on_attach = function(client, bufnr)
+				if vim.bo[bufnr].filetype == "javascript" or vim.bo[bufnr].filetype == "javascriptreact" then
+					client.stop()
+				end
+			end,
 		})
 
 		local on_attach = function(client, _)
