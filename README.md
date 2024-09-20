@@ -1,2 +1,2 @@
 # NeoVim
-Current NeoVim config
+Old NeoVim config
